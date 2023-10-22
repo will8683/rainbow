@@ -25,7 +25,7 @@ import BaseBadgeDark from '../../assets/badges/baseBadgeDark.png';
 import BaseBadgeLarge from '../../assets/badges/baseBadgeLarge.png';
 import BaseBadgeLargeDark from '../../assets/badges/baseBadgeLargeDark.png';
 import { Centered } from '../layout';
-import { AssetType } from '@/entities';
+import { Network } from '@/networks/types';
 import styled from '@/styled-thing';
 import { position as positions } from '@/styles';
 import { ChainBadgeSizeConfigs } from '@/components/coin-icon/ChainBadgeSizeConfigs';
@@ -50,10 +50,10 @@ const IndicatorIconContainer = styled(Centered)(
 );
 
 export default function ChainBadge({
-  assetType,
   badgeXPosition = -7,
   badgeYPosition = 0,
   marginBottom = 0,
+  network,
   position = 'absolute',
   size = 'small',
   forceDark = false,
@@ -66,36 +66,36 @@ export default function ChainBadge({
   const source = useMemo(() => {
     let val = null;
     if (size === 'large') {
-      if (assetType === AssetType.arbitrum) {
+      if (network === Network.arbitrum) {
         val = isDarkMode ? ArbitrumBadgeLargeDark : ArbitrumBadgeLarge;
-      } else if (assetType === AssetType.optimism) {
+      } else if (network === Network.optimism) {
         val = isDarkMode ? OptimismBadgeLargeDark : OptimismBadgeLarge;
-      } else if (assetType === AssetType.polygon) {
+      } else if (network === Network.polygon) {
         val = isDarkMode ? PolygonBadgeLargeDark : PolygonBadgeLarge;
-      } else if (assetType === AssetType.bsc) {
+      } else if (network === Network.bsc) {
         val = isDarkMode ? BscBadgeLargeDark : BscBadgeLarge;
-      } else if (assetType === AssetType.zora) {
+      } else if (network === Network.zora) {
         val = isDarkMode ? ZoraBadgeLargeDark : ZoraBadgeLarge;
-      } else if (assetType === AssetType.base) {
+      } else if (network === Network.base) {
         val = isDarkMode ? BaseBadgeLargeDark : BaseBadgeLarge;
       }
     } else {
-      if (assetType === AssetType.arbitrum) {
+      if (network === Network.arbitrum) {
         val = isDarkMode ? ArbitrumBadgeDark : ArbitrumBadge;
-      } else if (assetType === AssetType.optimism) {
+      } else if (network === Network.optimism) {
         val = isDarkMode ? OptimismBadgeDark : OptimismBadge;
-      } else if (assetType === AssetType.polygon) {
+      } else if (network === Network.polygon) {
         val = isDarkMode ? PolygonBadgeDark : PolygonBadge;
-      } else if (assetType === AssetType.bsc) {
+      } else if (network === Network.bsc) {
         val = isDarkMode ? BscBadgeDark : BscBadge;
-      } else if (assetType === AssetType.zora) {
+      } else if (network === Network.zora) {
         val = isDarkMode ? ZoraBadgeDark : ZoraBadge;
-      } else if (assetType === AssetType.base) {
+      } else if (network === Network.base) {
         val = isDarkMode ? BaseBadgeDark : BaseBadge;
       }
     }
     return val;
-  }, [assetType, isDarkMode, size]);
+  }, [network, isDarkMode, size]);
 
   if (!source) return null;
 
