@@ -19,7 +19,7 @@ import { getNetworkObj } from '@/networks';
 import { getNetworkFromChainId } from '@/utils/ethereumUtils';
 import { ButtonPressAnimation } from '@/components/animations';
 import { Placeholder, RecentMintCell } from './RecentMintCell';
-import { Linking, View } from 'react-native';
+import { View } from 'react-native';
 import { useTheme } from '@/theme';
 import { analyticsV2 } from '@/analytics';
 import * as i18n from '@/languages';
@@ -78,7 +78,7 @@ export function Card({ collection }: { collection: MintableCollection }) {
               <Bleed vertical="3px">
                 {network !== Network.mainnet ? (
                   <ChainBadge
-                    assetType={network}
+                    network={network}
                     position="relative"
                     size="medium"
                   />

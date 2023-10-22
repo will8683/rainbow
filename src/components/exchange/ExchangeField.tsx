@@ -170,7 +170,7 @@ const ExchangeField: ForwardRefRenderFunction<TextInput, ExchangeFieldProps> = (
                     style={{ ...borders.buildCircleAsObject(CoinIconSize) }}
                   />
                 </AccentColorProvider>
-                <ChainBadge assetType={network} />
+                <ChainBadge network={network} />
               </Box>
             )}
           </Box>

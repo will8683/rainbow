@@ -104,11 +104,7 @@ function NetworkIcons({ networks }: { networks: Network[] }) {
             }}
           >
             {network !== Network.mainnet ? (
-              <ChainBadge
-                assetType={network}
-                position="relative"
-                size="small"
-              />
+              <ChainBadge network={network} position="relative" size="small" />
             ) : (
               <CoinIcon
                 address={ETH_ADDRESS}

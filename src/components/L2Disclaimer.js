@@ -60,7 +60,7 @@ const L2Disclaimer = ({
           <Column justify="center">
             {isL2 ? (
               <ChainBadge
-                assetType={assetType}
+                network={assetType}
                 position="relative"
                 size="small"
                 forceDark={forceDarkMode}

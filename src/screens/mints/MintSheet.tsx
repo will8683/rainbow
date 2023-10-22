@@ -843,7 +843,7 @@ const MintSheet = () => {
                           />
                         ) : (
                           <ChainBadge
-                            assetType={currentNetwork}
+                            network={currentNetwork}
                             position="relative"
                             size="small"
                             forceDark={true}

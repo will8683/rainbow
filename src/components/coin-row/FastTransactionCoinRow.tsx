@@ -12,7 +12,6 @@ import { ImgixImage } from '../images';
 import { CardSize } from '../unique-token/CardSize';
 import { ChainBadge } from '../coin-icon';
 import { Network } from '@/networks/types';
-import { ethereumUtils } from '@/utils';
 
 const BottomRow = React.memo(function BottomRow({
   description,
@@ -143,12 +142,7 @@ export default React.memo(function TransactionCoinRow({
                 />
               </View>
               {item.network !== Network.mainnet && (
-                <ChainBadge
-                  assetType={ethereumUtils.getAssetTypeFromNetwork(
-                    item.network
-                  )}
-                  badgeYPosition={10}
-                />
+                <ChainBadge network={item.network} badgeYPosition={10} />
               )}
             </View>
           ) : (

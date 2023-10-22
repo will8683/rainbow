@@ -294,7 +294,7 @@ export function WalletConnectV2ListItem({
                       >
                         {network !== Network.mainnet ? (
                           <ChainBadge
-                            assetType={network}
+                            network={network}
                             position="relative"
                             size="small"
                           />

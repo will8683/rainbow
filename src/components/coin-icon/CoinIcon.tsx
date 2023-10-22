@@ -97,7 +97,7 @@ const CoinIcon: React.FC<Props> = ({
       )}
       {!ignoreBadge && (
         <ChainBadge
-          assetType={type}
+          network={network}
           badgeXPosition={badgeXPosition}
           badgeYPosition={badgeYPosition}
           size={badgeSize}

@@ -169,7 +169,7 @@ const NetworkPill = ({ chainIds }) => {
                   >
                     {network !== Network.mainnet ? (
                       <ChainBadge
-                        assetType={network}
+                        network={network}
                         position="relative"
                         size="small"
                       />
@@ -189,7 +189,7 @@ const NetworkPill = ({ chainIds }) => {
             <Inline alignVertical="center" wrap={false}>
               {availableNetworks[0] !== Network.mainnet ? (
                 <ChainBadge
-                  assetType={availableNetworks[0]}
+                  network={availableNetworks[0]}
                   position="relative"
                   size="small"
                 />
